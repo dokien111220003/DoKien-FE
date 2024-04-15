@@ -1,0 +1,173 @@
+.navbar-student {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  flex-direction: column;
+}
+
+.nav-content-student {
+  margin-top: 16px;
+  width: 100%;
+}
+
+.logo img {
+  height: 60px;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  margin-top: 60px;
+}
+
+.search-input {
+  display: flex;
+  align-items: center;
+  background-color: #FFFFFF;
+  border-radius: 20px;
+  padding: 5px 15px;
+}
+
+.search-input input {
+  border: none;
+  outline: none;
+  margin-left: 10px;
+  font-size: 16px;
+}
+
+.icon-search {
+  width: 24px;
+  height: 24px;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+
+.icon-profile {
+  width: 50px;
+  height: auto;
+  margin-top: -10px;
+}
+
+.sidebar-student {
+  width: 300px;
+  background-color: #FFFFFF;
+  padding: 20px;
+  max-height: 100%;
+  overflow-y: auto;
+  border-top: 2px solid #ECECEC;
+  border-right: 3px solid #ECECEC;
+  border-left: 2px solid #ECECEC;
+}
+
+.sidebar-student-menu {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar-student-menu li {
+  margin-bottom: 10px;
+  text-align: center;
+  padding: 15px 0;
+}
+
+.sidebar-student-menu li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 30px;
+  display: block;
+  transition: color 0.3s ease;
+  border-radius: 5px;
+  padding: 25px 0;
+}
+
+.sidebar-student-menu li a:hover {
+  color: #666;
+  background-color: #ECECEC;
+  border-radius: 5px;
+}
+
+.main-container {
+  display: flex;
+  flex: 1;
+}
+
+.content-student {
+  flex-grow: 1;
+}
+
+/*New ver*/
+
+
+.line-nav-student {
+  width: 100%;
+  height: 1px;
+  background-color: #e2e2e2;
+}
+
+
+.nav-student-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-student-links li {
+  font-size: 25px;
+  margin: 0px 40px 0px 40px;
+  transition: all 0.3s ease;
+}
+
+.nav-student-links li a {
+  color: #17171F;
+}
+
+.admin-nav {
+  margin-left: 16px;
+  width: 20px;
+  height: 20px;
+}
+
+.nav-student-links li:hover {
+  font-weight: 700;
+}
+
+.student-nav-arrow {
+  width: 25px;
+  margin-left: 10px;
+  height: 25px;
+  transition: all 0.3s;
+}
+
+.icon-search-student {
+  width: 20px;
+  height: 20px;
+  margin-top: -10px;
+  margin-left: 16px;
+  margin-right: 16px;
+}
+
+.search-container-student {
+  margin-left: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  background: #e8e8e8;
+  border-radius: 200px;
+}
+
+.search-input-student input {
+  height: 50px;
+  border: none;
+  outline: none;
+  font-size: 20px;
+  background: inherit;
+  padding-right: 30px;
+  font-family: 'Poppins', sans-serif;
+}

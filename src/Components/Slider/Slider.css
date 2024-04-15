@@ -1,0 +1,36 @@
+.slider {
+  position: relative;
+  width: 1200px;
+  height: 500px;
+  overflow: hidden;
+}
+
+.slide-container {
+  display: flex;
+  transition: transform 2s ease-in-out;
+}
+
+.slide {
+  width: 1200px;
+  height: 500px;
+  object-fit: cover;
+}
+
+.slider button {
+  margin-left: 25px;
+  margin-right: 25px;
+  position: absolute;
+  top: 45%;
+  background-color: rgba(0, 0, 0, 0.134);
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.slider button:first-child {
+  left: 0;
+}
+
+.slider button:last-child {
+  right: 0;
+}

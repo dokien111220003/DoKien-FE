@@ -1,0 +1,134 @@
+.add-topic-container {
+    display: flex;
+    flex-direction: column;
+    margin: 70px auto;
+    margin-top: 70px;
+    width: 600px;
+    background-color: #a8c1e0;
+    padding-bottom: 30px;
+    border-radius: 25px;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 9px;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.text {
+    color: #000000;
+    font-size: 48px;
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+}
+
+.input {
+    display: flex;
+    align-items: center;
+    margin: auto;
+    width: 480px;
+    height: 80px;
+    background: #DBE2EF;
+    border-radius: 6px;
+}
+
+.inputs {
+    margin-top: 55px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.input input {
+    height: 50px;
+    width: 480px;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #000000;
+    font-size: 25px;
+    padding-right: 30px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+}
+
+input[type="text"] {
+    padding-left: 20px;
+}
+
+.input select {
+    height: 50px;
+    width: 480px;
+    background: url('../Assets/down.png') no-repeat right 34px center;
+    background-size: 20px;
+    border: none;
+    outline: none;
+    color: #000000;
+    font-size: 25px;
+    padding-left: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    appearance: none;   
+    cursor: pointer;
+}
+
+
+.input input[type="datetime-local"] {
+    height: 50px;
+    width: 480px;
+    background: #DBE2EF;
+    border: none;
+    outline: none;
+    color: #000000;
+    font-size: 25px;
+    padding-left: 20px;
+    padding-right: -100px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+}
+
+.input input[type="datetime-local"]::-webkit-datetime-edit {
+    padding-right: 0;
+}
+
+.submit-container {
+    display: flex;
+    margin: 60px auto;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.submit-add {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 59px;
+    color: #fff;
+    background: #3F72AF;
+    border: none;
+    border-radius: 20px;
+    font-size: 19px;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 2px;
+}
+
+.submit-container :hover {
+    box-shadow: 0 0 0 4px #fff, 0 0 0 6px #1b5dd8;
+}
+
+.faculty-link {
+    display: flex;
+    margin-top: -50px;
+    margin-bottom: 20px;
+    justify-content: center;
+    align-items: center;
+    color: #3F72AF;
+    font-size: 20px;
+    text-decoration: none;
+}
