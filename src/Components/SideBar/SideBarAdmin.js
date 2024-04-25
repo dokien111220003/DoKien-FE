@@ -69,12 +69,12 @@ const SideBarAdmin = () => {
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a href="/accadmin">
                                         <img src={usericon} alt="" className="admin-nav-icon"></img>
                                         <span className="admin-nav-text">Account</span>
                                         <img src={arrowdown} alt="" className="admin-nav-arrow" onClick={toggleAccountMenu} style={{ transform: `rotate(${accountArrowRotation}deg)` }}></img>
                                     </a>
-
+{/* 
                                     <ul className="admin-sub-menu" style={{ display: isAccountOpen ? 'block' : 'none' }}>
                                         <li>
                                             <a href="/accadmin">
@@ -96,7 +96,7 @@ const SideBarAdmin = () => {
                                                 <span className="admin-nav-text">Marketing Manager</span>
                                             </a>
                                         </li>
-                                    </ul>
+                                    </ul> */}
                                 </li>
                             </ul>
                         </div>
