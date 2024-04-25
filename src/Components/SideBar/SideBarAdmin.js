@@ -7,6 +7,7 @@ import facultyicon from '../Assets/faculty.png';
 import arrowdown from '../Assets/arrow.png';
 import logouticon from '../Assets/signout.png';
 import course from '../Assets/course.png';
+import { NavLink } from 'react-router-dom';
 
 const SideBarAdmin = () => {
 
@@ -69,11 +70,16 @@ const SideBarAdmin = () => {
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href="/accadmin">
+                                <li><NavLink exact to='/accadmin' activeClassName="active" className="link-hover">
+                                <img src={usericon} alt="" className="admin-nav-icon"></img>
+                                        <span className="admin-nav-text">Account</span>
+                                        <img src={arrowdown} alt="" className="admin-nav-arrow" onClick={toggleAccountMenu} style={{ transform: `rotate(${accountArrowRotation}deg)` }}></img>
+                                    </NavLink></li>
+                                    {/* <a href="/accadmin">
                                         <img src={usericon} alt="" className="admin-nav-icon"></img>
                                         <span className="admin-nav-text">Account</span>
                                         <img src={arrowdown} alt="" className="admin-nav-arrow" onClick={toggleAccountMenu} style={{ transform: `rotate(${accountArrowRotation}deg)` }}></img>
-                                    </a>
+                                    </a> */}
 {/* 
                                     <ul className="admin-sub-menu" style={{ display: isAccountOpen ? 'block' : 'none' }}>
                                         <li>
