@@ -83,10 +83,10 @@ const SideBarAdmin = () => {
                             <ul>
                                 <li className="admin-logout">
                                     
-                                    <a className="logout-icon"  onClick={handleLogout} href="/login">
+                                    <NavLink className="logout-icon"  onClick={handleLogout} exact to='/login'>
                                         <img src={logouticon} alt="" className="admin-nav-icon"></img>
                                         <span className="admin-nav-footer-text">Logout</span>
-                                    </a>
+                                    </NavLink>
                                 </li>
                             </ul>
                         </div>
