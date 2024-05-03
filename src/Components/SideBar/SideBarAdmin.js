@@ -8,6 +8,9 @@ import arrowdown from '../Assets/arrow.png';
 import logouticon from '../Assets/signout.png';
 import course from '../Assets/course.png';
 import { NavLink } from 'react-router-dom';
+import { resetUser } from '../../redux/slides/userSlide'
+import * as UserService from '../../services/UserService';
+import { useDispatch, useSelector } from 'react-redux';
 
 const SideBarAdmin = () => {
 
@@ -15,6 +18,9 @@ const SideBarAdmin = () => {
     const [isAccountOpen, setIsAccountOpen] = useState(false);
     const [facultyArrowRotation, setFacultyArrowRotation] = useState(0);
     const [accountArrowRotation, setAccountArrowRotation] = useState(0);
+    const user = useSelector((state) => state.user)
+    const [loading, setLoading] = useState(false)
+    const dispatch = useDispatch()
 
     const toggleFacultyMenu = () => {
         setIsFacultyOpen(!isFacultyOpen);
@@ -26,19 +32,17 @@ const SideBarAdmin = () => {
         setAccountArrowRotation(isAccountOpen ? 0 : 180);
     }
 
+    const handleLogout = async () => {
+        setLoading(true)
+        await UserService.logoutUser()
+        dispatch(resetUser())
+        setLoading(false)
+      }
+
     return (
         <div>
             <div className="sidebar-admin-container">
                 <div className="admin-sidebar">
-                    <div className="sidebar-head">
-                        <div className="admin-img">
-                            <img src={user_img} alt="" className="user_img"></img>
-                        </div>
-                        <div className="admin-details">
-                            <p className="admin-title">Administrator</p>
-                            <p className="admin-name">Mr. Yone</p>
-                        </div>
-                    </div>
                     <div className="admin-nav">
                         <div className="admin-menu">
                             <p className="title">Main</p>
@@ -50,59 +54,25 @@ const SideBarAdmin = () => {
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                <NavLink exact to='/facultyadmin' activeClassName="active" className="link-hover">
+                                <img src={facultyicon} alt="" className="admin-nav-icon"></img>
+                                        <span className="admin-nav-text">Faculty</span>
+                                        <img src={arrowdown} alt="" className="admin-nav-arrow" onClick={toggleAccountMenu} style={{ transform: `rotate(${accountArrowRotation}deg)` }}></img>
+                                    </NavLink>
+                                    {/* <a href="#">
                                         <img src={facultyicon} alt="" className="admin-nav-icon"></img>
                                         <span className="admin-nav-text">Faculty</span>
                                         <img src={arrowdown} alt="" className="admin-nav-arrow" onClick={toggleFacultyMenu} style={{ transform: `rotate(${facultyArrowRotation}deg)` }}></img>
-                                    </a>
-
-                                    <ul className="admin-sub-menu" style={{ display: isFacultyOpen ? 'block' : 'none' }}>
-                                        <li>
-                                            <a href="/facultyadmin">
-                                                <span className="admin-nav-text">View All</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="/add_faculty">
-                                                <span className="admin-nav-text">Add New</span>
-                                            </a>
-                                        </li>
-                                    </ul>
+                                    </a> */}
                                 </li>
                                 <li>
-                                <li><NavLink exact to='/accadmin' activeClassName="active" className="link-hover">
+                                <li>
+                                    
+                                <NavLink exact to='/accadmin' activeClassName="active" className="link-hover">
                                 <img src={usericon} alt="" className="admin-nav-icon"></img>
                                         <span className="admin-nav-text">Account</span>
                                         <img src={arrowdown} alt="" className="admin-nav-arrow" onClick={toggleAccountMenu} style={{ transform: `rotate(${accountArrowRotation}deg)` }}></img>
                                     </NavLink></li>
-                                    {/* <a href="/accadmin">
-                                        <img src={usericon} alt="" className="admin-nav-icon"></img>
-                                        <span className="admin-nav-text">Account</span>
-                                        <img src={arrowdown} alt="" className="admin-nav-arrow" onClick={toggleAccountMenu} style={{ transform: `rotate(${accountArrowRotation}deg)` }}></img>
-                                    </a> */}
-{/* 
-                                    <ul className="admin-sub-menu" style={{ display: isAccountOpen ? 'block' : 'none' }}>
-                                        <li>
-                                            <a href="/accadmin">
-                                                <span className="admin-nav-text">Student</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="/accadmin">
-                                                <span className="admin-nav-text">Guest</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="/accadmin">
-                                                <span className="admin-nav-text">Marketing Coordinator</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="/accadmin">
-                                                <span className="admin-nav-text">Marketing Manager</span>
-                                            </a>
-                                        </li>
-                                    </ul> */}
                                 </li>
                             </ul>
                         </div>
@@ -112,7 +82,8 @@ const SideBarAdmin = () => {
                             <p className="admin-setting-title">Others</p>
                             <ul>
                                 <li className="admin-logout">
-                                    <a className="logout-icon" href="/login">
+                                    
+                                    <a className="logout-icon"  onClick={handleLogout} href="/login">
                                         <img src={logouticon} alt="" className="admin-nav-icon"></img>
                                         <span className="admin-nav-footer-text">Logout</span>
                                     </a>
